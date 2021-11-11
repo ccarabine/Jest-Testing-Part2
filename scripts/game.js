@@ -15,6 +15,7 @@ function newGame() {
         if (circle.getAttribute("data-listener") !== "true") {
             circle.addEventListener("click", (e) => {
                 let move = e.target.getAttribute("id");
+                console.log(move); //button
                 lightsOn(move);
                 game.playerMoves.push(move);
                 playerTurn();
@@ -43,7 +44,7 @@ function showTurns() {
     }, 800);
 }
 
-function lightsOn(circ) {
+function lightsOn(circ) { //button
     document.getElementById(circ).classList.add(circ + "light");
     setTimeout(function() {
         document.getElementById(circ).classList.remove(circ + "light");
